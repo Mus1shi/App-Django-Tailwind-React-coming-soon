@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Sushi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 flex flex-col min-h-screen text-gray-300">
+    <!-- Navbar et Header -->
+    <header class="bg-gray-800 p-4">
+        <div class="flex justify-between items-center">
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-yellow-500">Galerie</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Contact</a></li>
+                </ul>
+            </nav>
+            <h1 class="text-center text-4xl text-white font-bold tracking-widest">Tokugawa Family</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-yellow-500">Accueil</a></li>
+                    <li><a href="#" class="hover:text-yellow-500">Menu</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="flex flex-col items-center p-4 flex-grow">
+        <section class="text-center max-w-3xl">
+            <img src="djangoProject/static/images/fond.jpg" alt="Image du restaurant" class="rounded-lg shadow-lg mb-4">
+            <h2 class="text-2xl font-bold mb-2 text-white">Bienvenue dans notre restaurant</h2>
+            <p class="text-gray-400">Découvrez nos plats délicieux et raffinés préparés par notre chef de renom.</p>
+        </section>
+        <button class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition duration-300 mt-4">
+            Réserver une table
+        </button>
+    </main>
+
+    <!-- Footer fixé en bas -->
+    <footer class="bg-gray-800 text-gray-300 text-center p-2 mt-auto">
+        <p>&copy; 2024 Restaurant Sushi. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
