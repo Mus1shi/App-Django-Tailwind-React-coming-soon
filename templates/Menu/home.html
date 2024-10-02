@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Sushi</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body class="bg-gray-900 flex flex-col min-h-screen text-gray-300">
     <!-- Navbar et Header -->
@@ -20,17 +22,26 @@
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="#" class="hover:text-yellow-500">Accueil</a></li>
-                    <li><a href="#" class="hover:text-yellow-500">Menu</a></li>
+                    <li><a href="{% url 'menu' %}" class="hover:text-yellow-500">Menu</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
     <main class="flex flex-col items-center p-4 flex-grow">
+        <!-- Image avec texte superposé -->
         <section class="text-center max-w-3xl">
-            <img src="djangoProject/static/images/fond.jpg" alt="Image du restaurant" class="rounded-lg shadow-lg mb-4">
-            <h2 class="text-2xl font-bold mb-2 text-white">Bienvenue dans notre restaurant</h2>
-            <p class="text-gray-400">Découvrez nos plats délicieux et raffinés préparés par notre chef de renom.</p>
+            <div class="image-container">
+                <img src="{% static 'images/deventure.jpg' %}" alt="Image du restaurant" class="rounded-lg shadow-lg mb-4">
+                <div class="text-overlay">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">Bienvenue dans notre restaurant</h2>
+                        <p class="text-gray-300">Bienvenue chez Tokugawa Family, le restaurant de sushi gastronomique qui célèbre l'héritage culinaire de la famille du shogun Tokugawa. 
+                            Imprégnez-vous de l'élégance et du raffinement de l'époque Edo en savourant des créations sushi d'exception, alliant tradition ancestrale et innovation moderne. 
+                            Chaque plat est une œuvre d'art, reflétant des siècles de savoir-faire transmis de génération en génération. Venez vivre une expérience culinaire unique au cœur de la culture japonaise.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <button class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition duration-300 mt-4">
             Réserver une table
