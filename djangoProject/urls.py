@@ -7,5 +7,8 @@ from . import views  # Importer tes vues (si tu utilises les vues directement da
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('menu/',views.menu, name='menu')
+    path('menu/',views.menu, name='menu'),
+    path('contact/',views.contact, name='contact'),
+    path('history/',views.history, name='history'),
+    path('reservations/',views.reservations, name='reservations')
 ]

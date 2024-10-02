@@ -1,98 +1,93 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Restaurant Sushi</title>
+    <title>Menu Gastronomique Japonais</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-gray-300 flex flex-col min-h-screen">
-    <!-- Header et Navbar -->
-    <header class="bg-gray-800 p-4 text-white">
-        <div class="flex justify-between items-center">
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-yellow-500">Galerie</a></li>
-                    <li><a href="#" class="hover:text-yellow-500">Contact</a></li>
-                </ul>
-            </nav>
-            <h1 class="text-center text-4xl font-bold tracking-widest">Tokugawa Family</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-yellow-500">Accueil</a></li>
-                    <li><a href="#" class="hover:text-yellow-500">Menu</a></li>
+<body class="bg-gray-800">
+    <!-- En-tête -->
+   <header class="absolute top-0 right-0 z-30 w-full">
+        <div class="flex justify-end items-center p-4">
+            <nav class="text-white text-opacity-50 text-2xl">
+                <ul class="flex flex-col space-y-4 text-right">
+                    <li><a href="{% url 'reservations' %}" class="hover:text-yellow-500">Réservations</a></li>
+                    <li><a href="{% url 'home' %}" class="hover:text-yellow-500">Accueil</a></li>
+                    <li><a href="{% url 'menu' %}" class="hover:text-yellow-500">Menu</a></li>
+                    <li><a href="{% url 'history' %}" class="hover:text-yellow-500">Notre Histoire Familiale</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:text-yellow-500">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Section du Menu -->
-    <main class="flex-grow flex items-center justify-center p-6">
-        <div class="bg-amber-50 p-8 rounded-lg shadow-lg max-w-4xl transition-transform duration-500 hover:scale-105"> <!-- Conteneur avec couleur amber -->
-            <section class="mb-6 relative">
-                <h2 class="text-gray-800 text-2xl font-bold border-b-2 border-gray-400 pb-2 mb-4">Sushis</h2>
+    <!-- Video Background -->
+    <div class="relative h-screen w-full overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-10" autoplay muted loop>
+            <source src="{% static 'video/sashimi.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-                <!-- Premier Plat avec image au survol -->
-                <div class="menu-item relative group">
-                    <p>Sushi au thon rouge mariné à la sauce soja, wasabi frais</p>
-                    <span class="menu-price font-bold text-yellow-500">18€</span>
-
-                    <!-- Image masquée par défaut, affichée au survol -->
-                    <img src="{% static 'images/sushi_thon.jpg' %}" alt="Sushi au thon rouge" class="absolute left-16 top-0 w-40 h-40 rounded-lg shadow-lg hidden group-hover:block transition-opacity duration-300">
-                </div>
-
-                <!-- Deuxième Plat avec image au survol -->
-                <div class="menu-item relative group mt-4">
-                    <p>Sushi au saumon écossais avec une touche de yuzu</p>
-                    <span class="menu-price font-bold text-yellow-500">16€</span>
-
-                    <img src="{% static 'images/sushi_saumon.jpg' %}" alt="Sushi au saumon" class="absolute left-16 top-0 w-40 h-40 rounded-lg shadow-lg hidden group-hover:block transition-opacity duration-300">
-                </div>
-
-                <!-- Troisième Plat avec image au survol -->
-                <div class="menu-item relative group mt-4">
-                    <p>Sushi à l'anguille grillée avec sauce kabayaki</p>
-                    <span class="menu-price font-bold text-yellow-500">20€</span>
-
-                    <img src="{% static 'images/sushi_anguille.jpg' %}" alt="Sushi à l'anguille" class="absolute left-16 top-0 w-40 h-40 rounded-lg shadow-lg hidden group-hover:block transition-opacity duration-300">
-                </div>
-            </section>
-
-            <section class="mb-6">
-                <h2 class="text-gray-800 text-2xl font-bold border-b-2 border-gray-400 pb-2 mb-4">Sashimis</h2>
-                <div class="menu-item relative group">
-                    <p>Sashimi de bar sauvage, huile d’olive vierge et zeste de citron</p>
-                    <span class="menu-price font-bold text-yellow-500">24€</span>
-
-                    <img src="{% static 'images/sashimi_bar.jpg' %}" alt="Sashimi de bar" class="absolute left-16 top-0 w-40 h-40 rounded-lg shadow-lg hidden group-hover:block transition-opacity duration-300">
-                </div>
-
-                <div class="menu-item relative group mt-4">
-                    <p>Sashimi de saumon écossais, purée de wasabi</p>
-                    <span class="menu-price font-bold text-yellow-500">22€</span>
-
-                    <img src="{% static 'images/sashimi_saumon.jpg' %}" alt="Sashimi de saumon" class="absolute left-16 top-0 w-40 h-40 rounded-lg shadow-lg hidden group-hover:block transition-opacity duration-300">
-                </div>
-            </section>
-
-            <section class="mb-6">
-                <h2 class="text-gray-800 text-2xl font-bold border-b-2 border-gray-400 pb-2 mb-4">Le Menu du Chef</h2>
-                <div class="menu-item relative group">
-                    <p>Menu dégustation avec assortiment de sushi, sashimi et plats chauds, selon l'inspiration du chef</p>
-                    <span class="menu-price font-bold text-yellow-500">75€</span>
-                </div>
-
-                <div class="menu-item relative group mt-4">
-                    <p>Omakase : expérience gastronomique sur-mesure (sur réservation uniquement)</p>
-                    <span class="menu-price font-bold text-yellow-500">100€</span>
-                </div>
-            </section>
+        <!-- Texte par-dessus la vidéo -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center z-20">
+<h1 id="ici" class="text-yellow-500 text-6xl font-bold">Notre menu</h1>
         </div>
+    </div>
+    <!-- Contenu principal -->
+    <main class="container mx-auto p-8">
+        <!-- Section Sushi -->
+        <section class="bg-yellow-100 shadow-lg rounded-lg p-6 mb-8">
+            <h2 class="text-3xl font-bold mb-4">Sushi</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold">Sushi Thon Rouge</h3>
+                    <p class="text-gray-600 italic">Filet de thon rouge fondant, servi sur un riz vinaigré parfaitement assaisonné.</p>
+                    <p class="text-red-600 font-bold">28€</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Sushi Saumon Fumé</h3>
+                    <p class="text-gray-600 italic">Saumon fumé de façon traditionnelle, posé délicatement sur une boule de riz légèrement sucré.</p>
+                    <p class="text-red-600 font-bold">25€</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Sashimi -->
+        <section class="bg-yellow-100 shadow-lg rounded-lg p-6 mb-8">
+            <h2 class="text-3xl font-bold mb-4">Sashimi</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold">Sashimi Thon Toro</h3>
+                    <p class="text-gray-600 italic">Les meilleures tranches de thon gras, coupées à la perfection pour fondre en bouche.</p>
+                    <p class="text-red-600 font-bold">35€</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Sashimi Bar Sauvage</h3>
+                    <p class="text-gray-600 italic">Filet de bar sauvage, servi cru pour révéler toute sa fraîcheur et son goût subtil.</p>
+                    <p class="text-red-600 font-bold">32€</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu du Chef -->
+        <section class="bg-yellow-100 shadow-white rounded-lg p-6">
+            <h2 class="text-3xl font-bold mb-4">Menu du Chef</h2>
+            <p class="text-gray-600 mb-4">Laissez-vous guider par notre chef, qui vous prépare un menu dégustation basé sur les produits les plus frais du jour.</p>
+            <ul class="list-disc list-inside">
+                <li class="text-gray-700">Amuse-bouche japonais</li>
+                <li class="text-gray-700">Sélection de sushi et sashimi</li>
+                <li class="text-gray-700">Plat chaud de saison</li>
+                <li class="text-gray-700">Dessert inspiré des saveurs japonaises</li>
+            </ul>
+            <p class="text-red-600 font-bold mt-4">Prix par personne : 90€</p>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 text-center p-2 mt-auto">
+    <!-- Pied de page -->
+    <footer class="bg-gray-700 text-white text-center p-4 mt-8">
         <p>&copy; 2024 Restaurant Sushi. Tous droits réservés.</p>
     </footer>
 </body>
