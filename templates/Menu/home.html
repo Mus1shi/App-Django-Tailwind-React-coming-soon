@@ -65,6 +65,7 @@
                 </p>
             </div>
             <div class="md:w-1/2">
+                <img src="{% static 'images/onigiri.jpg' %}" alt="Image de sushi" class="rounded-lg shadow-2xl">
              </div>
         </div>
     </section>
@@ -102,12 +103,11 @@
         <div class="flex items-center mb-2">
           <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full mr-3">
           <div>
-            <h3 class="font-semibold">John Doe</h3>
-            <p class="text-sm text-gray-500">Posted on March 15, 2024</p>
+            <h3 class="font-semibold">John De la méduse</h3>
+            <p class="text-sm text-gray-500">Posté le 3 octobre, 2024</p>
           </div>
         </div>
-        <p class="text-gray-700">Great product! I've been using it for a week now and I'm very satisfied with its
-          performance.</p>
+        <p class="text-gray-700"> OMG !! Ce site web est tellement beau ! Amazing !! Et les features ?!! POPOPOOOO, merci qui ? Merci Bibi !</p>
         <div class="flex items-center mt-2">
           <button class="text-blue-500 hover:text-blue-600 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
@@ -125,10 +125,11 @@
           <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full mr-3">
           <div>
             <h3 class="font-semibold">Jane Smith</h3>
-            <p class="text-sm text-gray-500">Posted on March 10, 2024</p>
+            <p class="text-sm text-gray-500">Posté le 10 mars, 2024</p>
           </div>
         </div>
-        <p class="text-gray-700">The shipping was fast and the product arrived in perfect condition. Highly recommended!
+        <p class="text-gray-700">Ce fût vraiment une expérience unique et exceptionnelle, la nourriture était d'un frais et la technique du chef incroyable !
+            Nous reviendrons !
         </p>
         <div class="flex items-center mt-2">
           <button class="text-blue-500 hover:text-blue-600 mr-2">
@@ -144,17 +145,17 @@
 
     <!-- Comment Form -->
     <form class="mt-8 bg-white p-4 rounded-lg shadow">
-      <h3 class="text-lg font-semibold mb-2">Add a Comment</h3>
+      <h3 class="text-lg font-semibold mb-2">Partagez votre expérience</h3>
       <div class="mb-4">
-        <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+        <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
         <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
       </div>
       <div class="mb-4">
-        <label for="comment" class="block text-gray-700 font-medium mb-2">Comment</label>
+        <label for="comment" class="block text-gray-700 font-medium mb-2">Commentaire</label>
         <textarea id="comment" name="comment" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
       </div>
       <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-        Post Comment
+        Envoyer
       </button>
     </form>
   </div>
