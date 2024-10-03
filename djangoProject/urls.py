@@ -10,5 +10,8 @@ urlpatterns = [
     path('menu/',views.menu, name='menu'),
     path('contact/',views.contact, name='contact'),
     path('history/',views.history, name='history'),
-    path('reservations/',views.reservations, name='reservations')
+    path('reservations/',views.reservations, name='reservations'),
+    path('send_contact/',views.send_contact, name='send_contact')
+
+
 ]

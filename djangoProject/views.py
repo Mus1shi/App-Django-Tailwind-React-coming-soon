@@ -10,4 +10,5 @@ def history(request):
     return render(request, 'Menu/history.html')
 def reservations(request):
     return render(request, 'Menu/reservations.html')
-
+def send_contact(request):
+    return render(request, 'Menu/send_contact')

@@ -1,103 +1,121 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Sushi</title>
+  <title>Réservations - Restaurant TOKUGAWA</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
-<body class="bg-gray-800 flex flex-col min-h-screen text-gray-300">
-    <!-- Navbar et Header -->
-    <header class="bg-gray-900 p-4">
-        <div class="flex justify-between items-center">
-             <nav class="text-white text-2xl">
+<body class="bg-gray-100 text-gray-900">
+    <!-- En-tête avec nom du restaurant à gauche et navbar à droite -->
+    <header class="flex justify-between items-center p-6">
+        <h1 class="text-yellow-500 text-3xl font-bold uppercase">TOKUGAWA</h1>
+        
+        <!-- Logo centré -->
+          <div class="flex justify-center items-center ml-20">
+    <img src="{% static 'images/logo.png' %}" alt="Image du logo" class="w-24 h-24 rounded-full border-4 border-white shadow-lg mt-4">
+</div>
+        <nav class="text-black text-opacity-50 text-2xl">
                 <ul class="flex flex-col space-y-4 text-right">
-                    <li><a href="#" class="hover:text-yellow-500">Réservations</a></li>
                     <li><a href="{% url 'home' %}" class="hover:text-yellow-500">Accueil</a></li>
                     <li><a href="{% url 'menu' %}" class="hover:text-yellow-500">Menu</a></li>
                     <li><a href="{% url 'history' %}" class="hover:text-yellow-500">Notre Histoire Familiale</a></li>
                     <li><a href="{% url 'contact' %}" class="hover:text-yellow-500">Contact</a></li>
                 </ul>
             </nav>
-        </div>
     </header>
 
-    <div class="flex items-center justify-center p-12">
-        <!-- Formulaire centré et réduit -->
-        <div class="mx-auto w-full max-w-sm bg-yellow-100 rounded-lg p-8 shadow-lg">
-            <form>
-                <div class="mb-5">
-                    <label for="fName" class="mb-3 block text-base font-medium text-black">
-                        Prénom
-                    </label>
-                    <input type="text" name="fName" id="fName" placeholder="Prénom"
-                        class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base font-medium text-black outline-none focus:border-yellow-500 focus:shadow-md" />
-                </div>
-                
-                <div class="mb-5">
-                    <label for="lName" class="mb-3 block text-base font-medium text-black">
-                        Nom
-                    </label>
-                    <input type="text" name="lName" id="lName" placeholder="Nom"
-                        class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base font-medium text-black outline-none focus:border-yellow-500 focus:shadow-md" />
-                </div>
+    <!-- Contenu principal -->
+    <main class="container mx-auto py-12">
+        <h1 class="text-5xl font-bold text-center mb-6">Réservations</h1>
+        <p class="text-lg text-center text-gray-600 mb-8">
+            Le restaurant TOKUGAWA est ouvert du mardi au samedi à partir de 18h00. Nous acceptons les réservations jusqu'au mois de novembre. Les réservations pour décembre 2024 seront disponibles à partir du 1er octobre à midi.
+        </p>
 
-                <div class="mb-5">
-                    <label for="guest" class="mb-3 block text-base font-medium text-black">
-                        Nombre d'invités
-                    </label>
-                    <input type="number" name="guest" id="guest" placeholder="1" min="0"
-                        class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base font-medium text-black outline-none focus:border-yellow-500 focus:shadow-md" />
-                </div>
+        <!-- Informations sur les restrictions alimentaires -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Restrictions Alimentaires</h2>
+            <p class="text-gray-700 mb-4">
+                Merci de nous signaler toute restriction alimentaire importante lors de votre réservation. Veuillez noter que des ingrédients comme l'ail, le sel, le soja, et les algues ne peuvent pas être retirés du menu. 
+            </p>
+            <p class="text-gray-700">
+                Des menus spécifiques pour les régimes végétariens, véganes, sans gluten, ou sans produits laitiers sont toujours disponibles. Si vous avez des allergies complexes, merci de nous contacter avant votre réservation.
+            </p>
+        </section>
 
-                <div class="mb-5">
-                    <label for="date" class="mb-3 block text-base font-medium text-black">
-                        Date
-                    </label>
-                    <input type="date" name="date" id="date"
-                        class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base font-medium text-black outline-none focus:border-yellow-500 focus:shadow-md" />
-                </div>
+        <!-- Informations sur le dress code -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Code Vestimentaire</h2>
+            <p class="text-gray-700">
+                Nous vous recommandons une tenue élégante. Les t-shirts, shorts, casquettes ou tenues décontractées ne sont pas autorisés. Chez TOKUGAWA, vous ne serez jamais trop bien habillé, alors faites-vous plaisir !
+            </p>
+        </section>
 
-                <div class="mb-5">
-                    <label for="time" class="mb-3 block text-base font-medium text-black">
-                        Heure
-                    </label>
-                    <input type="time" name="time" id="time"
-                        class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base font-medium text-black outline-none focus:border-yellow-500 focus:shadow-md" />
-                </div>
-                
-                 <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="service">
-                Service
-            </label>
-            <select
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="service" name="service">
-                <option value="">Select a service</option>
-                <option value="Demande">Demande particulière</option>
-                <option value="Mariage">Mariage</option>
-                <option value="Allergies">Allergies</option>
-                <option value="Partenariat">Partenariat</option>
-            </select>
+        <!-- Formulaire de réservation -->
+        <section class="bg-gray-50 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold mb-6 text-center">Réservez votre table</h2>
+            <div class="mx-auto w-full max-w-lg">
+                <form>
+                    <div class="mb-5">
+                        <label for="fName" class="mb-2 block text-base font-medium text-gray-900">Prénom</label>
+                        <input type="text" name="fName" id="fName" placeholder="Prénom"
+                            class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-black outline-none focus:border-yellow-500 focus:shadow-md" />
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="lName" class="mb-2 block text-base font-medium text-gray-900">Nom</label>
+                        <input type="text" name="lName" id="lName" placeholder="Nom"
+                            class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-black outline-none focus:border-yellow-500 focus:shadow-md" />
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="guest" class="mb-2 block text-base font-medium text-gray-900">Nombre d'invités</label>
+                        <input type="number" name="guest" id="guest" placeholder="1" min="1"
+                            class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-black outline-none focus:border-yellow-500 focus:shadow-md" />
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="date" class="mb-2 block text-base font-medium text-gray-900">Date</label>
+                        <input type="date" name="date" id="date"
+                            class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-black outline-none focus:border-yellow-500 focus:shadow-md" />
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="time" class="mb-2 block text-base font-medium text-gray-900">Heure</label>
+                        <input type="time" name="time" id="time"
+                            class="w-full rounded-lg border border-gray-300 bg-white py-2 px-4 text-base text-black outline-none focus:border-yellow-500 focus:shadow-md" />
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="hover:shadow-form rounded-md bg-yellow-500 py-2 px-6 text-center text-base font-semibold text-white outline-none">
+                            Réserver
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+     <footer class="bg-gray-900 text-white text-center p-6">
+        <div class="flex flex-col md:flex-row justify-around mb-6">
+            <div>
+                <h2 class="text-xl font-bold">Nos Politiques</h2>
+                <p class="mt-2">Cliquez ici pour en savoir plus sur les restrictions alimentaires, le code vestimentaire, et les annulations.</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold">Newsletter</h2>
+                <p class="mt-2">Recevez un accès exclusif à nos événements et offres spéciales.</p>
+                <a href="#" class="text-yellow-500 font-bold underline hover:text-yellow-600">Inscrivez-vous à la newsletter Tokugawa</a>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold">Contactez-nous</h2>
+                <p class="mt-2">Appelez-nous au (206) 283-3313 ou envoyez un email à <a href="mailto:reservations@tokugawafamily.com" class="underline text-yellow-500 hover:text-yellow-600">reservations@tokugawafamily.com</a></p>
+            </div>
         </div>
-<div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="message">
-                Message
-            </label>
-            <textarea
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="message" rows="4" placeholder="Enter any additional information"></textarea>
-        </div>
-                <div class="text-center">
-                    <button class="hover:shadow-form rounded-md bg-yellow-500 py-2 px-6 text-center text-base font-semibold text-white outline-none">
-                        Réserver
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+        <p>&copy; 1950 - 2024 Tokugawa Family. Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>

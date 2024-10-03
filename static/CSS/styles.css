@@ -1,7 +1,0 @@
-#popup {
-  display: block;
-}
-
-#close:target + #popup {
-  display: none;
-}

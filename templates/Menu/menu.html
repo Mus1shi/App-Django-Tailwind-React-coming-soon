@@ -5,90 +5,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Gastronomique Japonais</title>
+    <title>Menu Gastronomique Japonais - TOKUGAWA</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-800">
-    <!-- En-tête -->
-   <header class="absolute top-0 right-0 z-30 w-full">
-        <div class="flex justify-end items-center p-4">
-            <nav class="text-white text-opacity-50 text-2xl">
+<body class="bg-gray-100 text-gray-900">
+    <!-- En-tête avec nom du restaurant à gauche et navbar à droite -->
+     <header class="flex justify-between items-center p-6">
+        <h1 class="text-yellow-500 text-3xl font-bold uppercase">TOKUGAWA</h1>
+        
+        <!-- Logo centré -->
+          <div class="flex justify-center items-center ml-20">
+    <img src="{% static 'images/logo.png' %}" alt="Image du logo" class="w-24 h-24 rounded-full border-4 border-white shadow-lg mt-4">
+</div>
+        <nav class="text-black text-opacity-50 text-2xl">
                 <ul class="flex flex-col space-y-4 text-right">
+                      <li><a href="{% url 'home' %}" class="hover:text-yellow-500">Accueil</a></li>
                     <li><a href="{% url 'reservations' %}" class="hover:text-yellow-500">Réservations</a></li>
-                    <li><a href="{% url 'home' %}" class="hover:text-yellow-500">Accueil</a></li>
-                    <li><a href="{% url 'menu' %}" class="hover:text-yellow-500">Menu</a></li>
                     <li><a href="{% url 'history' %}" class="hover:text-yellow-500">Notre Histoire Familiale</a></li>
                     <li><a href="{% url 'contact' %}" class="hover:text-yellow-500">Contact</a></li>
                 </ul>
             </nav>
-        </div>
     </header>
 
-    <!-- Video Background -->
-    <div class="relative h-screen w-full overflow-hidden">
-        <video class="absolute top-0 left-0 w-full h-full object-cover z-10" autoplay muted loop>
-            <source src="{% static 'video/sashimi.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <!-- Texte par-dessus la vidéo -->
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center z-20">
-<h1 id="ici" class="text-yellow-500 text-6xl font-bold">Notre menu</h1>
+    <!-- Titre et phrase d'accroche -->
+    <main class="container mx-auto py-12">
+        <h1 class="text-black text-5xl font-bold text-center mb-6">Menu unique</h1>
+        <p class="text-center text-lg text-gray-600 mb-12">Découvrez notre expérience gastronomique japonaise, où tradition et modernité se rencontrent dans chaque plat.</p>
+        <!-- Deux images côte à côte -->
+        <div class="flex justify-center mb-12">
+            <img src="{% static 'images/chops.jpg' %}" alt="Sushi" class="w-1/2 h-auto rounded-lg shadow-2xl">
+            <img src="{% static 'images/maguro.jpg' %}" alt="Sashimi" class="w-1/2 h-auto rounded-lg shadow-2xl">
         </div>
-    </div>
-    <!-- Contenu principal -->
-    <main class="container mx-auto p-8">
-        <!-- Section Sushi -->
-        <section class="bg-yellow-100 shadow-lg rounded-lg p-6 mb-8">
-            <h2 class="text-3xl font-bold mb-4">Sushi</h2>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-xl font-semibold">Sushi Thon Rouge</h3>
-                    <p class="text-gray-600 italic">Filet de thon rouge fondant, servi sur un riz vinaigré parfaitement assaisonné.</p>
-                    <p class="text-red-600 font-bold">28€</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold">Sushi Saumon Fumé</h3>
-                    <p class="text-gray-600 italic">Saumon fumé de façon traditionnelle, posé délicatement sur une boule de riz légèrement sucré.</p>
-                    <p class="text-red-600 font-bold">25€</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section Sashimi -->
-        <section class="bg-yellow-100 shadow-lg rounded-lg p-6 mb-8">
-            <h2 class="text-3xl font-bold mb-4">Sashimi</h2>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-xl font-semibold">Sashimi Thon Toro</h3>
-                    <p class="text-gray-600 italic">Les meilleures tranches de thon gras, coupées à la perfection pour fondre en bouche.</p>
-                    <p class="text-red-600 font-bold">35€</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold">Sashimi Bar Sauvage</h3>
-                    <p class="text-gray-600 italic">Filet de bar sauvage, servi cru pour révéler toute sa fraîcheur et son goût subtil.</p>
-                    <p class="text-red-600 font-bold">32€</p>
-                </div>
+        <!-- Menu en trois sections -->
+        <section class="text-center">
+            <div class="mb-16">
+                <h2 class="text-3xl font-semibold mb-8">Première Sélection</h2>
+                <ul class="space-y-4 text-lg">
+                    <li><strong>Sablefish</strong> - noisette, yuzu, caviar</li>
+                    <li><strong>Aubergine Zurita</strong> - huître shigoku, poivrons, pomme</li>
+                    <li><strong>Agneau</strong> - sésame, nori, daikon mariné</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Menu du Chef -->
-        <section class="bg-yellow-100 shadow-white rounded-lg p-6">
-            <h2 class="text-3xl font-bold mb-4">Menu du Chef</h2>
-            <p class="text-gray-600 mb-4">Laissez-vous guider par notre chef, qui vous prépare un menu dégustation basé sur les produits les plus frais du jour.</p>
-            <ul class="list-disc list-inside">
-                <li class="text-gray-700">Amuse-bouche japonais</li>
-                <li class="text-gray-700">Sélection de sushi et sashimi</li>
-                <li class="text-gray-700">Plat chaud de saison</li>
-                <li class="text-gray-700">Dessert inspiré des saveurs japonaises</li>
-            </ul>
-            <p class="text-red-600 font-bold mt-4">Prix par personne : 90€</p>
+            <div class="mb-16">
+                <h2 class="text-3xl font-semibold mb-8">Deuxième Sélection</h2>
+                <ul class="space-y-4 text-lg">
+                    <li><strong>Flétan</strong> - tomate fumée, calmar, tamari</li>
+                    <li><strong>Champignons Teriyaki</strong> - mochi, ramp, kasu</li>
+                    <li><strong>Wagyu Américain</strong> - riz Tsuyahime, jaune d'œuf, allium</li>
+                </ul>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-3xl font-semibold mb-8">Troisième Sélection</h2>
+                <ul class="space-y-4 text-lg">
+                    <li><strong>Cacao Fumé</strong> - nougatine, glace au lait</li>
+                    <li><strong>Parfait à la Vanille</strong> - sorbet cerise, chocolat noir, noisette</li>
+                    <li><strong>Maja Blanca</strong> - pêche, rhum, maïs, shiso</li>
+                </ul>
+            </div>
         </section>
     </main>
 
-    <!-- Pied de page -->
-    <footer class="bg-gray-700 text-white text-center p-4 mt-8">
-        <p>&copy; 2024 Restaurant Sushi. Tous droits réservés.</p>
+     <footer class="bg-gray-900 text-white text-center p-6">
+        <div class="flex flex-col md:flex-row justify-around mb-6">
+            <div>
+                <h2 class="text-xl font-bold">Nos Politiques</h2>
+                <p class="mt-2">Cliquez ici pour en savoir plus sur les restrictions alimentaires, le code vestimentaire, et les annulations.</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold">Newsletter</h2>
+                <p class="mt-2">Recevez un accès exclusif à nos événements et offres spéciales.</p>
+                <a href="#" class="text-yellow-500 font-bold underline hover:text-yellow-600">Inscrivez-vous à la newsletter Tokugawa</a>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold">Contactez-nous</h2>
+                <p class="mt-2">Appelez-nous au (206) 283-3313 ou envoyez un email à <a href="mailto:reservations@tokugawafamily.com" class="underline text-yellow-500 hover:text-yellow-600">reservations@tokugawafamily.com</a></p>
+            </div>
+        </div>
+        <p>&copy; 1950 - 2024 Tokugawa Family. Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
