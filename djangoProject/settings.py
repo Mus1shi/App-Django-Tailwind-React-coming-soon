@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tailwind',  # Assurez-vous d'avoir installé l'application tailwind si vous l'utilisez
+    'tailwind',
+    'djangoProject',# Assurez-vous d'avoir installé l'application tailwind si vous l'utilisez
 ]
 
 MIDDLEWARE = [
