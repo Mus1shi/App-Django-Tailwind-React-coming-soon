@@ -3,7 +3,8 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'Menu/home.html')  # Chemin vers home.html dans le dossier Menu
 def menu(request):
-    return render(request, 'Menu/menu.html')
+    plats = Menu.objects.all()
+    return render(request, 'Menu/menu.html', {'plats': plats})
 def contact(request):
     return render(request, 'Menu/contact.html')
 def history(request):
