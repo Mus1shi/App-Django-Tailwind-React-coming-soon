@@ -39,30 +39,33 @@
 
         <!-- Menu en trois sections -->
         <section class="text-center">
+            <!-- Première Sélection -->
             <div class="mb-16">
                 <h2 class="text-3xl font-semibold mb-8">Première Sélection</h2>
                 <ul class="space-y-4 text-lg">
-                    <li><strong>Sablefish</strong> - noisette, yuzu, caviar</li>
-                    <li><strong>Aubergine Zurita</strong> - huître shigoku, poivrons, pomme</li>
-                    <li><strong>Agneau</strong> - sésame, nori, daikon mariné</li>
+                    {% for plat in plats_premiere_selection %}
+                    <li><strong>{{ plat.name }}</strong> - {{ plat.description }} - {{ plat.price }}</li>
+                   {% endfor %}
                 </ul>
             </div>
+            <!-- Deuxième Sélection -->
 
             <div class="mb-16">
                 <h2 class="text-3xl font-semibold mb-8">Deuxième Sélection</h2>
                 <ul class="space-y-4 text-lg">
-                    <li><strong>Flétan</strong> - tomate fumée, calmar, tamari</li>
-                    <li><strong>Champignons Teriyaki</strong> - mochi, ramp, kasu</li>
-                    <li><strong>Wagyu Américain</strong> - riz Tsuyahime, jaune d'œuf, allium</li>
+                    {% for plat in plats_deuxieme_selection %}
+                    <li><strong>{{ plat.name }}</strong> - {{ plat.description }} - {{ plat.price }}</li>
+                    {% endfor %}
                 </ul>
             </div>
+            <!-- Troisième Sélection -->
 
             <div class="mb-16">
                 <h2 class="text-3xl font-semibold mb-8">Troisième Sélection</h2>
                 <ul class="space-y-4 text-lg">
-                    <li><strong>Cacao Fumé</strong> - nougatine, glace au lait</li>
-                    <li><strong>Parfait à la Vanille</strong> - sorbet cerise, chocolat noir, noisette</li>
-                    <li><strong>Maja Blanca</strong> - pêche, rhum, maïs, shiso</li>
+                    {% for plat in plats_troisieme_selection %}
+                    <li><strong>{{ plat.name }}</strong> - {{ platt.description }} - {{ plat.price }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
