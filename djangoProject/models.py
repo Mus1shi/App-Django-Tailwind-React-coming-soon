@@ -27,3 +27,13 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comment(models.Model):
+    name = models.CharField(max_length=100)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.PositiveIntegerField(default=0)
+    dislikes = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"commentaire de {self.name} (Posté le {self.created_at})"

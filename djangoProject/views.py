@@ -1,8 +1,25 @@
 from django.shortcuts import render, get_object_or_404
-from djangoProject.models import Category, Menu  # Importer les modèles Category et Menu
+from djangoProject.models import Category, Menu, Comment
 
 def home(request):
-    return render(request, 'Menu/home.html')  # Chemin vers home.html dans le dossier Menu
+    comments = Comment.objects.all()
+
+    if request.method == 'POST':
+
+        name = request.POST.get('name')
+        content = request.POST.get('content')
+
+        if name and content:
+            comment = Comment(name=name, content=content)
+            comment.save()
+
+            return redirect('home')
+
+    context = {
+    'comments': comments,
+    }
+
+    return render(request, 'Menu/home.html', context)
 
 def menu(request):
     # Récupérer les catégories
