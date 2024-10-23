@@ -1,8 +1,7 @@
 from tkinter.font import names
-
 from django.contrib import admin
 from django.urls import path
-from . import views  # Importer tes vues (si tu utilises les vues directement dans ce fichier)
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,7 +10,7 @@ urlpatterns = [
     path('contact/',views.contact, name='contact'),
     path('history/',views.history, name='history'),
     path('reservations/',views.reservations, name='reservations'),
-    path('send_contact/',views.send_contact, name='send_contact')
-
-
+    path('send_contact/',views.send_contact, name='send_contact'),
+    path('like/<int:comment_id>/', views.like_comment, name='like_comment'),
+    path('dislike/<int:comment_id>/', views.dislike_comment, name='dislike_comment'),
 ]
