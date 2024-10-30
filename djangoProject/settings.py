@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tailwind',
-    'djangoProject',# Assurez-vous d'avoir installé l'application tailwind si vous l'utilisez
+    'djangoProject',
+    'rest_framework',
+    'restaurant',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']  # Utilisation correcte de Path pour le
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print("BASE_DIR:", BASE_DIR)

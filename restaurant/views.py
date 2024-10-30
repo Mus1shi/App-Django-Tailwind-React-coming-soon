@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category, Menu, Comment, Reservation
-from .forms import CommentForm, ReservationForm
+from restaurant.models import Category, Menu, Comment, Reservation, Chef
+from restaurant.forms import CommentForm, ReservationForm
+from rest_framework import viewsets
+from restaurant.serializers import ReservationSerializer, MenuSerializer, CommentSerializer, CategorySerializer, ChefSerializer
+
 
 def home(request):
     comments = Comment.objects.all()
@@ -87,3 +90,27 @@ def send_contact(request):
 
 def history(request):
     return render(request, 'Menu/history.html')
+
+#Views for l'API REST
+
+class ReservationViewSet(viewsets.ModelViewSet):
+    queryset = Reservation.objects.all()
+    serializer_class = ReservationSerializer
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class ChefViewSet(viewsets.ModelViewSet):
+    queryset = Chef.objects.all()
+    serializer_class = ChefSerializer
+
+class MenuViewSet(viewsets.ModelViewSet):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+

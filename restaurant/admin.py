@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Category, Chef, Comment, Reservation
+from restaurant.models import Menu, Category, Chef, Comment, Reservation
 
 admin.site.register(Menu)
 admin.site.register(Category)

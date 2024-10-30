@@ -38,8 +38,6 @@ class Comment(models.Model):
     def __str__(self):
         return f"commentaire de {self.name} (Posté le {self.created_at})"
 
-from django.db import models
-
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
     mail = models.EmailField()

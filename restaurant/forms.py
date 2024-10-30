@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment, Reservation
+from restaurant.models import Comment, Reservation
 
 class CommentForm(forms.ModelForm):
     class Meta:
