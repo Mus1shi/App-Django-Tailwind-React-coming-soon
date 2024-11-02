@@ -5,7 +5,7 @@ from restaurant.views import (
     ReservationViewSet, MenuViewSet, CommentViewSet, CategoryViewSet, ChefViewSet
 )
 
-# Configuration des routes de l'API REST
+# Road API REST
 router = DefaultRouter()
 router.register(r'reservations', ReservationViewSet)
 router.register(r'menu', MenuViewSet)
@@ -15,6 +15,6 @@ router.register(r'chefs', ChefViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('restaurant.urls')),  # Inclusion des routes de l'application `restaurant`
-    path('api/', include(router.urls)),    # Inclusion des routes de l'API REST
+    path('', include('restaurant.urls')),
+    path('api/', include(router.urls)),
 ]

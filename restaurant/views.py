@@ -47,7 +47,6 @@ def menu(request):
     plats_deuxieme_selection = Menu.objects.filter(category=deuxieme_selection)
     plats_troisieme_selection = Menu.objects.filter(category=troisieme_selection)
 
-    # Passer les plats et les prix des sous-catégories au template
     context = {
         'plats_premiere_selection': plats_premiere_selection,
         'plats_deuxieme_selection': plats_deuxieme_selection,
@@ -67,7 +66,6 @@ def reservations(request):
 
         print(f"Name: {name}, Mail: {mail}, Date: {date}, People: {people}, Time: {time}, Content: {content}")
 
-        # Sauvegarder les données dans la base de données
         if name and mail and date and people and time:
             Reservation.objects.create(
                 name=name,
@@ -79,7 +77,7 @@ def reservations(request):
             )
             return redirect('reservations')
 
-    form = ReservationForm()  # Assurez-vous que le formulaire est initialisé pour être utilisé dans le template
+    form = ReservationForm()
     return render(request, 'Menu/reservations.html', {'form': form})
 
 def contact(request):

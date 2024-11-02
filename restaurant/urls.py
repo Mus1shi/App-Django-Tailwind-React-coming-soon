@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import (  # Utilise '.' pour indiquer le dossier actuel, qui est `restaurant`
+from .views import (
     home, menu, contact, history, reservations, send_contact,
     like_comment, dislike_comment
 )
