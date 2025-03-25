@@ -1,45 +1,109 @@
-# restaurant-gastronomique
+#  Tokugawa - Gourmet Restaurant Website (WIP)
 
-# Gourmet Restaurant Website Project
-
-This project is a dynamic, full-featured website for a gourmet restaurant that integrates advanced web development technologies, including **Python**, **Django**, **React**, **JavaScript**, **Tailwind CSS**, **SQL**, and **Docker**.
+**Tokugawa** is a web application currently in development for a high-end Japanese restaurant. The project is based on a modern architecture combining **Django (Python)** for the backend and **React, TypeScript, Tailwind CSS**, and **Material UI (MUI)** for the frontend. It aims to deliver a smooth, responsive, and elegant user experience, with dynamic and advanced features.
 
 ---
 
-## Features
+##  Current Status: In Progress
 
-- **Online Reservations**: A streamlined reservation system with customizable fields, allowing customers to reserve tables and specify dietary preferences.
-- **Interactive Gallery**: A dynamic, responsive image gallery showcasing the restaurant’s cuisine, with a carousel and zoom functionality.
-- **Comment Section**: Allows users to leave comments on their dining experience, moderated by the administrator.
-- **Menu Filtering and Sorting**: Interactive menu page with React-based filters by dish category and sorting options.
-- **Contact Form**: A fully styled, responsive contact form with validation.
+The site was initially built entirely using **classic Django** with **HTML/CSS templates** and **Tailwind CSS** to quickly validate the structure, views, database models, and core backend features.
 
----
+This initial version allowed for:
 
-## Technologies
-
-- **Back-End**: Django, SQL
-- **Front-End**: HTML, CSS, Tailwind CSS, JavaScript, React (in progress)
-- **Tools**: Docker, Git, GitHub
-- **Data**: Free stock photos and videos for images and video background
+-  Implementing Django models and business logic  
+-  Testing forms, gallery, comment section, and routing  
+-  Prototyping a consistent responsive design using Tailwind CSS  
 
 ---
 
-## Current Status
+## Why Move to React + TypeScript?
 
-### Completed
+The migration to **React + TypeScript** at this stage is motivated by:
 
-2. **Views and Templates**: Django views and templates for homepage, menu, reservations, history, and contact pages.
-3. **Responsive Design**: Layout and styling using Tailwind CSS for consistent user experience across devices.
-4. **Static Gallery**: Functional gallery with image.
-5. **styling Pages with Tailwind**: Home, reservations, menu, history, conatct pages.
+- **Backend stability**: Django logic is fully operational, allowing a clean decoupled frontend through a REST API  
+- **Modular architecture**: React offers better separation of components and flexible state management (forms, filters, comments)  
+- **Enhanced UX**: Features like image carousels, real-time comment updates, and menu filtering are better handled with React  
+- **Continued use of Tailwind CSS**: Fast and consistent styling across the application  
+- **Scalability**: A React + TypeScript base opens the door for a SPA or PWA version  
 
-### In Progress
+---
 
-1. **Dynamic Gallery Enhancement**: Implementation of a JavaScript/React-based carousel with zoom functionality.
-2. **Form Validation**: JavaScript real-time validation for the reservation and contact forms.
-3. **Comment Section with React**: Adding real-time comment updates and sorting.
-4. **Filtering and Sorting Menu**: Implementing dy
-5. **Django Models**: Configured models for dishes, categories, and chef profile.
+## ✅ Features Already Implemented (Django)
 
+- Pages: Home, Reservations, Menu, Story, Contact  
+- Models: Dishes, Categories, Reservations, Chefs, Comments  
+- Static image gallery  
+- Functional forms for reservations and contact  
+- Responsive layout using **Tailwind CSS**  
+- Classic Django views with integrated routing  
 
+---
+
+## 🔄 In Progress
+
+-  Full frontend redesign using **React + TypeScript + Tailwind CSS + MUI**  
+-  Dynamic gallery with zoom and navigation  
+-  Real-time comment section  
+-  Dynamically filterable/sortable menu  
+-  JavaScript + backend validation for forms  
+-  Secure REST endpoints using **Django REST Framework**  
+-  Full Dockerization of the project  
+
+---
+
+## Planned Features
+
+### Frontend
+
+- **Online reservations**: Interactive form with date/time and dietary preference selection  
+- **Interactive gallery**: Dynamic carousel with zoom (React)  
+- **Comments section**: Real-time post/view/sort/moderate  
+- **Dynamic menu**: Filter by category, sort by price/popularity  
+- **Contact form**: Fully validated and responsive  
+- **Responsive design**: Seamless navigation across all screen sizes  
+- **Unified UI**: Styled using **Tailwind CSS** and **Material UI components**  
+
+### Backend
+
+- **Secure REST API**: Endpoints for managing reservations, comments, dishes, categories, and chef profiles  
+- **Authentication and roles**: Admin/moderator access with protected routes  
+- **Server-side validation**: Backend logic to enforce business rules  
+- **Clear business logic**: Handles time slots, availability, capacity limits, etc.  
+- **PostgreSQL integration** using Django ORM  
+- **Full Docker support** for simplified deployment  
+
+---
+
+## Translation API Integration (Planned)
+
+This project will include a **translation API** to dynamically support **multiple languages** for menus, forms, and user comments.
+
+### Target Languages
+
+- French  
+- English  
+- Japanese  
+
+### Translation APIs Considered
+
+- **DeepL** – high translation accuracy  
+- **LibreTranslate** – open-source, free  
+- **Google Translate API** – fast and versatile  
+
+### Planned Usage
+
+- Translation of REST API data on the Django backend  
+- Client-side rendering based on selected user language  
+
+---
+
+## Technologies Used
+
+- **Backend**: Django, Django REST Framework, PostgreSQL  
+- **Frontend**: React, TypeScript, Tailwind CSS, Material UI (MUI)  
+- **Tools**: Docker, Git, GitHub  
+- **Assets**: Royalty-free images and videos for immersive ambiance  
+
+---
+
+> This project is developed iteratively, with a clear separation between backend and frontend, ensuring long-term maintainability and scalability.
